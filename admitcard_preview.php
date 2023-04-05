@@ -23,7 +23,7 @@ if(!isset($_SERVER['HTTP_REFERER']) || !isset($_SESSION['sess_user'])){
 					<div class="form-body">
 						<div class="row">
 							<div class="col-md-12 form-group videoWrapper" >
-								<iframe id="forPostyouradd"  height='200%' width="100%" data-src="http://localhost/projects/sscsr/site/IndexController/admitcardpreview" src="about:blank" class="responsive-iframe" allowfullscreen style="background:#ffffff"></iframe>
+								<iframe id="forPostyouradd"  height='200%' width="100%" data-src="http://localhost/projects/site/IndexController/admitcardpreview" src="about:blank" class="responsive-iframe" allowfullscreen style="background:#ffffff"></iframe>
 							</div>
 						</div>
 					</div>

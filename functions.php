@@ -8,7 +8,7 @@ require_once("config/db.php");
 //For Online Purpose
 
 $base_url =  "localhost";
-$GLOBALS['local_path'] =  "http://10.163.2.160/projects/sscsr/site/IndexController/admitcardpreview";
+$GLOBALS['local_path'] =  "http://10.163.2.160/projects/site/IndexController/admitcardpreview";
 
 
  function cleanData($val)
