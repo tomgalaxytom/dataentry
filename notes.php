@@ -25,6 +25,17 @@ change current file path
 
 
 
+    Go to Python Folder:change log path:
+
+
+    #creating LOG file
+root_logger= logging.getLogger()
+root_logger.setLevel(logging.DEBUG) 
+handler = logging.FileHandler('C:/xampp/htdocs/projects/dataentry/log/sscsr_log.log', 'w', 'utf-8')
+
+notify.show_toast("SSCSR Data Uploading...!", "👍 Started ", duration=10, threaded=True, icon_path="C:/xampp/htdocs/projects/sscsr/dataentry/images/logo/logo.ico")
+
+
 # Site 
 
 # functions.php

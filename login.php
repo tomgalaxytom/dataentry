@@ -187,7 +187,7 @@ if(isset($_POST['submit'])){
 							}
 						 $_SESSION['sess_user']=$user;
 						 //Redirect Browser
-						 header("Location:index.php");
+						 header("Location:add_exam.php");
 					 }
 					 else{
 						 

@@ -62,7 +62,7 @@ solution2 = NeededDataColumns.difference(ExcelFileDataColumns)
 #creating LOG file
 root_logger= logging.getLogger()
 root_logger.setLevel(logging.DEBUG) 
-handler = logging.FileHandler('C:/xampp/htdocs/projects/sscsr/dataentry/log/sscsr_log.log', 'w', 'utf-8')
+handler = logging.FileHandler('C:/xampp/htdocs/projects/dataentry/log/sscsr_log.log', 'w', 'utf-8')
 handler.setFormatter(logging.Formatter('%(message)s')) # or whatever
 root_logger.addHandler(handler)
 
@@ -74,11 +74,11 @@ if solution2.values.size != 0:
     logging.error("Excel file column and table column are not matched")
     logging.error('not match - wrong column name',solution2.values)
     logging.error("Please Check the Excel file Columns...!")
-    notify.show_toast("SSCSR Data Uploading...!", "👎 Failed, Excel file column and table column are not matched", duration=10, threaded=True, icon_path="C:/xampp/htdocs/projects/sscsr/dataentry/images/logo/logo.ico")
+    notify.show_toast("SSCSR Data Uploading...!", "👎 Failed, Excel file column and table column are not matched", duration=10, threaded=True, icon_path="C:/xampp/htdocs/projects/dataentry/images/logo/logo.ico")
     print("<p style='color:red'>Excel file column and table column are not matched</p> <p style='color:red'>not match - wrong column name {0} </p> <p style='color:red'>Please Check the Excel file Columns...!</p>".format(solution2.values))
     exit()
 else:
-    notify.show_toast("SSCSR Data Uploading...!", "👍 Started ", duration=10, threaded=True, icon_path="C:/xampp/htdocs/projects/sscsr/dataentry/images/logo/logo.ico")
+    notify.show_toast("SSCSR Data Uploading...!", "👍 Started ", duration=10, threaded=True, icon_path="C:/xampp/htdocs/projects/dataentry/images/logo/logo.ico")
 logging.info("Excel file column and table column are matched")
 logging.info("--------------------------------Start------------------------------------------------")
 now = datetime.datetime.now()
@@ -93,7 +93,7 @@ for i in data.index:
         #convetr float into int
         reg_no = int(data['reg_no'][i])
         if record_count % 10000 == 0:
-            notify.show_toast("SSCSR Data Uploading...!", "{0} Data Processed".format(i), duration=10, threaded=True, icon_path="C:/xampp/htdocs/projects/sscsr/dataentry/images/logo/logo.ico", )
+            notify.show_toast("SSCSR Data Uploading...!", "{0} Data Processed".format(i), duration=10, threaded=True, icon_path="C:/xampp/htdocs/projects/dataentry/images/logo/logo.ico", )
    
         #check if data[reg_no][i] is null or not if null then then go to the next row of data frame 
         if data['reg_no'][i] == 'NA'  or len(str(reg_no)) != 11:
@@ -181,5 +181,5 @@ logging.info("Time Taken in Minutes         : %s", diff_mins,"mins")
 diff_secs = diff_mins * 60
 logging.info("Time Taken in Seconds         : %s", diff_secs,"sec")
 logging.info("--------------------------------End--------------------------------------------------")
-notify.show_toast("SSCSR Data Uploading...!", "👍 Completed ", duration=10, threaded=True, icon_path="C:/xampp/htdocs/projects/sscsr/dataentry/images/logo/logo.ico")
+notify.show_toast("SSCSR Data Uploading...!", "👍 Completed ", duration=10, threaded=True, icon_path="C:/xampp/htdocs/projects/dataentry/images/logo/logo.ico")
 print("<p style='color:blue'>Total number of records readed {0}</p> <p style='color:green'>Total inserted records {1}</p> <p style='color:red'>Total error records {2}</p>".format(record_count, success_records,error_records))
